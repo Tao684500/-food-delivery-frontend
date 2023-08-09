@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Outlet } from 'react-router-dom';
 import './App.css';
 import Header from './component/Header';
@@ -8,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 function App() {  
   const dispatch = useDispatch()
   const productData = useSelector((state)=>state.product)
+  console.log(productData)
   useEffect (() => {
     (async() => {
       const res = await fetch(`${process.env.REACT_APP_SERVER_DOMIN}/product`)
